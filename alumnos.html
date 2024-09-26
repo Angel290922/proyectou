@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Alumnos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Consulta de Alumnos</h1>
+    </header>
+
+    <main>
+        <form id="consultaAlumno">
+            <label for="control">Ingresa el número de control del alumno:</label>
+            <input type="text" id="control" name="control">
+            <button type="button" onclick="consultarAlumno()">Consultar</button>
+        </form>
+
+        <div id="resultado"></div>
+		<button type="button" onclick="window.location.href='Index.html'">Regresar</button>
+    </main>
+
+    <script>
+        function consultarAlumno() {
+            const controlIngresado = document.getElementById('control').value;
+            const xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "alumnos.xml", true);
+            xhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    const xml = this.responseXML;
+                    const alumnos = xml.getElementsByTagName("alumno");
+                    let encontrado = false;
+                    for (let i = 0; i < alumnos.length; i++) {
+                        const control = alumnos[i].getElementsByTagName("control")[0].textContent;
+                        if (control === controlIngresado) {
+                            const nombre = alumnos[i].getElementsByTagName("nombre")[0].textContent;
+                            const edad = alumnos[i].getElementsByTagName("edad")[0].textContent;
+                            const carrera = alumnos[i].getElementsByTagName("carrera")[0].textContent;
+                            const semestre = alumnos[i].getElementsByTagName("semestre")[0].textContent;
+                            document.getElementById('resultado').innerHTML = `
+                                <p><strong>Nombre:</strong> ${nombre}</p>
+                                <p><strong>Edad:</strong> ${edad}</p>
+                                <p><strong>Carrera:</strong> ${carrera}</p>
+                                <p><strong>Semestre:</strong> ${semestre}</p>`;
+                            encontrado = true;
+                            break;
+                        }
+                    }
+                    if (!encontrado) {
+                        document.getElementById('resultado').innerHTML = "<p>No se encontró el alumno.</p>";
+                    }
+                }
+            };
+            xhttp.send();
+        }
+    </script>
+</body>
+</html>

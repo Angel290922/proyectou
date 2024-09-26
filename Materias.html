@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Materias</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Consulta de Materias</h1>
+    </header>
+
+    <main>
+        <form id="consultaMateria">
+            <label for="codigo">Ingresa el código de la materia:</label>
+            <input type="text" id="codigo" name="codigo">
+            <button type="button" onclick="consultarMateria()">Consultar</button>
+        </form>
+
+        <div id="resultadoMateria"></div>
+		<button type="button" onclick="window.location.href='Index.html'">Regresar</button>
+    </main>
+
+    <script>
+        function consultarMateria() {
+            const codigoIngresado = document.getElementById('codigo').value;
+            // Crear un script que cargue el archivo JSONP
+            const script = document.createElement('script');
+            script.src = 'materias.js';  // Carga el archivo JSONP
+            document.body.appendChild(script);
+        }
+
+        function materiasCallback(data) {
+            const materias = data.materias;
+            const codigoIngresado = document.getElementById('codigo').value;
+            let encontrado = false;
+            materias.forEach(materia => {
+                if (materia.codigo === codigoIngresado) {
+                    document.getElementById('resultadoMateria').innerHTML = `
+                        <p><strong>Nombre:</strong> ${materia.nombre}</p>
+                        <p><strong>Profesor:</strong> ${materia.profesor}</p>
+                        <p><strong>Créditos:</strong> ${materia.creditos}</p>
+                        <p><strong>Semestre:</strong> ${materia.semestre}</p>`;
+                    encontrado = true;
+                }
+            });
+            if (!encontrado) {
+                document.getElementById('resultadoMateria').innerHTML = "<p>No se encontró la materia.</p>";
+            }
+        }
+    </script>
+</body>
+</html>

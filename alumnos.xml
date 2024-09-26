@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<alumnos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="alumnos.xsd">
+  <alumno>
+    <nombre>Luis Gabriel Guillen Mendoza</nombre>
+    <control>21141287</control>
+    <edad>21</edad>
+    <carrera>Ingeniería en Sistemas</carrera>
+    <semestre>7</semestre>
+  </alumno>
+  <alumno>
+    <nombre>Jose Euvaldo Zarazua Garcia</nombre>
+    <control>21141286</control>
+    <edad>21</edad>
+    <carrera>Ingeniería en Sistemas</carrera>
+    <semestre>7</semestre>
+  </alumno>
+  <alumno>
+    <nombre>Emilio Jr. Aguas Mendoza</nombre>
+    <control>21141285</control>
+    <edad>21</edad>
+    <carrera>Ingeniería en Sistemas</carrera>
+    <semestre>7</semestre>
+  </alumno>
+  <alumno>
+    <nombre>Angel Vigil Velazquez</nombre>
+    <control>20141459</control>
+    <edad>21</edad>
+    <carrera>Ingeniería en Sistemas</carrera>
+    <semestre>7</semestre>
+  </alumno>
+  <alumno>
+    <nombre>Carla Ortiz Cruz</nombre>
+    <control>22141333</control>
+    <edad>20</edad>
+    <carrera>Ingeniería en Sistemas</carrera>
+    <semestre>5</semestre>
+  </alumno>
+  <alumno>
+    <nombre>Michelle Fabian Fabian</nombre>
+    <control>22141328</control>
+    <edad>20</edad>
+    <carrera>Ingeniería en Sistemas</carrera>
+    <semestre>5</semestre>
+  </alumno>
+  <alumno>
+    <nombre>Ximena Ortiz Cruz</nombre>
+    <control>22141334</control>
+    <edad>21</edad>
+    <carrera>Ingeniería en Sistemas</carrera>
+    <semestre>5</semestre>
+  </alumno>
+  <alumno>
+    <nombre>Sarahi Azucena Ramirez Morales</nombre>
+    <control>22141337</control>
+    <edad>21</edad>
+    <carrera>Ingeniería en Sistemas</carrera>
+    <semestre>5</semestre>
+  </alumno>
+  <alumno>
+    <nombre>Alonzo Aguas Gutierrez</nombre>
+    <control>20141450</control>
+    <edad>22</edad>
+    <carrera>Ingeniería Industrial</carrera>
+    <semestre>9</semestre>
+  </alumno>
+  <alumno>
+    <nombre>Gabriel Martinez Martinez</nombre>
+    <control>21141284</control>
+    <edad>21</edad>
+    <carrera>Ingeniería Industrial</carrera>
+    <semestre>7</semestre>
+  </alumno>
+</alumnos>
